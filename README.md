@@ -24,6 +24,6 @@
       <li>scrapy crawl PBilets -a url=https://tula.planzala.ru/event/mgzavrebi-hronologiya -o tickets.csv</li>
       <li>scrapy crawl PBilets -a url=https://tula.planzala.ru/event/otel-zhelanij -o tickets1.csv</li>
 <BR>
-пожалуйста не используйте одинарные ковычки при передачи url, или двойные или вообще без ковычек.
+пожалуйста не используйте одинарные ковычки при передачи url, можно использовать только двойные или вообще без ковычек.
 
       
