@@ -2,13 +2,11 @@ import scrapy
 from lxml import html
 from io import StringIO
 from datetime import datetime
-import locale
 
 class PeventsSpider(scrapy.Spider):
     name = 'PEvents'
     start_urls = ['https://tula.planzala.ru/']
     BASE_URL = 'https://tula.planzala.ru'
-    locale.setlocale(locale.LC_TIME, 'ru_RU.utf8')
     months = {'января' : "01" ,
               "февраля" : "02" ,
               "марта":"03" ,
@@ -23,7 +21,7 @@ class PeventsSpider(scrapy.Spider):
               "декабря":"12" }
     added = []
 
-    """Я понимаю, что решение делать словарь месяцев для даты не самое лучшее, но к сожелению datatime может преобразовать русские месяца только если они в именительном падеже,
+    """Я понимаю, что решение делать словарь месяцев для даты не самое лучшее, но к сожелению datetime может преобразовать русские месяца только если они в именительном падеже,
     у нас же здесь в родительном. но что что, а ubuntu 20.10 спокойно их преобразовала, и даже не заметила не угодный падеж, но к сожелению windows так не может,
     можно было установить PyICU, но на windows она тоже встает только с бубном, а я не знаю какая у вас ОС. Поэтому пришлось делать более универсальное решение, пусть и не красивое."""
 
