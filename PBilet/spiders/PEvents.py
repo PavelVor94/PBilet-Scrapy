@@ -55,7 +55,7 @@ class PeventsSpider(scrapy.Spider):
             # извлекаем дату и время из строк полученных со страницы, для дальнейшего преобразования в нужный нам формат
             tm = times_events[i].strip()[2:].strip()
             (day, month) = dates_events[i].strip()[:-1].split(' ')
-            dt = datetime.strptime(day+" "+self.months[month]+" 2021 "+tm, "%d %m %Y %H:%M")
+            dt = datetime.strptime(f'{day} {self.months[month]} 2021 +tm', "%d %m %Y %H:%M")
 
             # если дата уже прошла. значит это мероприятие в следующем году. меняем год на 2022
             if datetime.now() > dt :
